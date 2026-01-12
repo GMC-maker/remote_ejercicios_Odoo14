@@ -1,0 +1,81 @@
+# Repo del grupo dentro de mi backup
+addons/prueba_logitrans/
+
+# ==========================================
+# PYTHON / ODOO
+# ==========================================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Odoo cache and temp files
+.odoo/
+.cache/
+.sessions/
+.temp/
+*.tmp
+*.temp
+*.swp
+
+# Compiled Odoo assets
+*.assets.json
+
+
+# ==========================================
+# DOCKER
+# ==========================================
+# Docker volumes created in host folders
+odoo-db-data/
+odoo-web-data/
+
+# Common docker-db folders if created inside the project
+**/data/
+**/pgdata/
+
+# Docker environment files
+.env
+.env.*
+
+
+# ==========================================
+# EDITOR / IDE
+# ==========================================
+# VS Code project settings
+.vscode/
+
+# Others
+.idea/
+*.code-workspace
+
+
+# ==========================================
+# OS FILES
+# ==========================================
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+
+# ==========================================
+# BACKUP & TEMPORARY FILES
+# ==========================================
+*.bak
+*.backup
+*~
+*.swp
+*.swo
+
+
+# ==========================================
+# NODE / FRONTEND (por si Odoo usa web libs)
+# ==========================================
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log

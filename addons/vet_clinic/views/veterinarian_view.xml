@@ -6,6 +6,13 @@
     <field name="model">vet_clinic.veterinarian</field>
     <field name="arch" type="xml">
         <form string="Veterinario">
+        <!--esto es para los botones, el name debe coincidir con un metodo en su clase veterinarian.py-->
+        <header>
+            <button name="btn_submit_to_activo" string="Está activo" type="object"/>
+            <button name="btn_submit_to_baja" string="Está de baja" type="object"/>
+            <button name="btn_submit_to_vacaciones" string="Está de vacaciones" type="object"/>
+            <field name="status" widget="statusbar"/>
+        </header>
             <sheet>
                 <group>
                     <field name="name"/>
@@ -41,10 +48,7 @@
     </record>
 
 
-
-    
-
-        <!-- actions opening views on models -->
+    <!-- actions opening views on models -->
 
         <record model="ir.actions.act_window" id="vet_clinic.action_window_veterinarian">
         <field name="name">Veterinarios</field>

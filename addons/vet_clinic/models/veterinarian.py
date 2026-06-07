@@ -21,7 +21,7 @@ class veterinarian(models.Model):
 
     status = fields.Selection([('activo','En activo'), 
                              ('baja', 'Baja'),('vacaciones', 'Vacaciones')], 
-                             string='Estado', required=True,default='activo')
+                             string='Estado', required=True,default='activo', readonly=True)
     
     appointment_ids = fields.One2many(
         string='Citas',
@@ -38,4 +38,13 @@ class veterinarian(models.Model):
     _sql_constraints = [('license_number_unique','UNIQUE (license_number)','El numero de licencia ya existe para otro usuario.'),
                         ('email_unique','UNIQUE (email)','El correo electrónico debe ser único.')]
     
+    # i) aqui los botones que cambian el estado
+
+    def btn_submit_to_activo(self):
+          self.write({'status':'activo'})
+    def btn_submit_to_baja(self):
+          self.write({'status':'baja'})
+    def btn_submit_to_vacaciones(self):
+          self.write({'status':'vacaciones'})
+
 

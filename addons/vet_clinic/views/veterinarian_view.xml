@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+
+    <record id="veterinarian_form_view" model="ir.ui.view">
+    <field name="name">vet_clinic.veterinarian.form</field>
+    <field name="model">vet_clinic.veterinarian</field>
+    <field name="arch" type="xml">
+        <form string="Veterinario">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                    <field name="license_number"/>
+                    <field name="specialty"/>
+                    <field name="photo" widget="image" class="oe_avatar"/>
+                    <field name="num_appointments"/>
+                    <field name="status"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+    </record>
+
+    <record id="veterinarian_tree_view" model="ir.ui.view">
+        <field name="name">vet_clinic.veterinarian.tree</field>
+        <field name="model">vet_clinic.veterinarian</field>
+        <field name="arch" type="xml">
+        <tree string="tree_string">
+            <field name="name" />
+            <field name="email"/>
+            <field name="phone" />
+            <field name="license_number" />
+            <field name="specialty" />
+            <field name="photo" widget="image" options="{'size': [128, 128]}" />
+            <field name="num_appointments" />
+            <field name="status" />
+            <field name="appointment_ids" widget="many2one" />
+        </tree>
+        </field>
+    </record>
+
+
+
+    
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="vet_clinic.action_window_veterinarian">
+        <field name="name">Veterinarios</field>
+        <field name="res_model">vet_clinic.veterinarian</field>
+        <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+
+</odoo>

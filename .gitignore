@@ -48,7 +48,8 @@ odoo-web-data/
 
 # Others
 .idea/
-*.code-workspace
+*.code-workspace4
+agents.md
 
 
 # ==========================================

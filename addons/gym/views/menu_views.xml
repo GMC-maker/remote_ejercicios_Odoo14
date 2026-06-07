@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="Gym" id="main_gym_menu" groups="group_gym_manager"/>
+        <!-- menu categories -->
+        <menuitem name="Gym" id="gym_menu" groups="group_gym_manager" parent="main_gym_menu"/>
+        <!-- actions -->
+        <menuitem name="Classes" id="classes_menu" parent="gym_menu" groups="group_gym_manager" action="classes_list_action"/>
+    </data>
+</odoo>

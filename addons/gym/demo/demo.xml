@@ -1,0 +1,24 @@
+<odoo>
+  <data>
+
+    <record id="class0" model="gym.classes">
+      <field name="name">Class 0</field>
+      <field name="description">Class 0s description puede tener varias lineas</field>
+      <field name="start">2025-12-12 00:00:00</field>
+      <field name="end">2025-12-12 01:00:00</field>
+    </record>
+    <record id="class1" model="gym.classes">
+      <field name="name">Class 1</field>
+      <field name="start">2025-12-12 00:00:00</field>
+      <field name="end">2025-12-12 01:00:00</field>
+      <!-- Sin descripcion -->
+    </record>
+    <record id="class2" model="gym.classes">
+      <field name="name">Class 2</field>
+      <field name="description">Class 2s description</field>
+      <field name="start">2025-12-12 00:00:00</field>
+      <field name="end">2025-12-12 01:00:00</field>
+    </record>
+
+  </data>
+</odoo>

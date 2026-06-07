@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+    <record id="appointment_form_view" model="ir.ui.view">
+    <field name="name">vet_clinic.appointment.form</field>
+    <field name="model">vet_clinic.appointment</field>
+    <field name="arch" type="xml">
+        <form string="Veterinario">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="pet_name"/>
+                    <field name="owner_phone"/>
+                    <field name="reason"/>
+                    <field name="veterinarian_id" />
+                </group>
+            </sheet>
+        </form>
+    </field>
+    </record>
+
+    <record id="appointment_tree_view" model="ir.ui.view">
+        <field name="name">vet_clinic.appointment.tree</field>
+        <field name="model">vet_clinic.appointment</field>
+        <field name="arch" type="xml">
+        <tree string="tree_string">
+            <field name="name"/>
+            <field name="pet_name"/>
+            <field name="owner_phone"/>
+            <field name="reason"/>
+            <field name="veterinarian_id" widget="one2many" />
+        </tree>
+        </field>
+    </record>
+
+    #vista de calendario 
+
+    <record id="appointment_calendar_view" model="ir.ui.view">
+    <field name="name">vet_clinic.appointment.calendar</field>
+    <field name="model">vet_clinic.appointment</field>
+    <field name="arch" type="xml">
+        <calendar string="Citas" color="veterinarian_id" date_start="name">
+            <field name="pet_name"/>
+            <field name="owner_phone"/>
+            <field name="veterinarian_id"/>
+            <field name="reason"/>
+        </calendar>
+    </field>
+    </record>
+
+
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="vet_clinic.action_window_appointment">
+        <field name="name">Listado de citas</field>
+        <field name="res_model">vet_clinic.appointment</field>
+        <field name="view_mode">calendar,tree,form</field>
+        </record>
+
+    </data>
+
+</odoo>

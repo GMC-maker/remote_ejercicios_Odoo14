@@ -1,0 +1,23 @@
+<odoo>
+
+    <data>
+    <!-- Top menu item -->
+    <menuitem name="Clinica veterinaria" id="vet_clinic.menu_root"/>
+    
+    <!-- menu categories -->
+    <menuitem name="Veterinarios" id="vet_clinic.menu_veterinarian" parent="vet_clinic.menu_root"/>
+    <menuitem name="Citas" id="vet_clinic.menu_appointment" parent="vet_clinic.menu_root"/>
+
+    <!-- actions -->
+    #el id debe ser único, se puede llamar como yo quiera. vet_clinic.menu2_vet  o listado_citas...es le segundo nivel.
+    <menuitem name="Listado de Veterinarios" id="vet_clinic.menu_veterinarian_root" parent="vet_clinic.menu_veterinarian"
+            action="vet_clinic.action_window_veterinarian"/>
+    <menuitem name="Listado de citas" id="vet_clinic.menu_appointment_root" parent="vet_clinic.menu_appointment"
+            action="vet_clinic.action_window_appointment"/>
+
+        
+
+    </data>
+    
+
+</odoo>

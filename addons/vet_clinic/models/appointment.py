@@ -38,19 +38,25 @@ class appointment(models.Model):
             result.append((record.id, name))
         return result
     
-    #j) para validar o crear una restriccion, no se pueden agregar citas a un vet que no este activo.
+    
     @api.constrains('veterinarian_id')
-    def _check_veterinarian_active(self):
-        for record in self:
-            if record.veterinarian_id and record.veterinarian_id.status != 'activo':
-                raise ValidationError(
-                    'No se pueden agregar citas a un veterinario que no este en activo.'
-                )
+    def check_status_appointment(self):
+         if self.veterinarian_id.status != 'activo':
+              raise models.ValidationError('No se pueden agregar citas si el estado no es activo')
+    
+    #j) para validar o crear una restriccion, no se pueden agregar citas a un vet que no este activo.
+    # @api.constrains('veterinarian_id')
+    # def _check_veterinarian_active(self):
+    #     for record in self:
+    #         if record.veterinarian_id and record.veterinarian_id.status != 'activo':
+    #             raise ValidationError(
+    #                 'No se pueden agregar citas a un veterinario que no este en activo.'
+    #             )
             
-    def unlink(self):
-        for record in self:
-            if record.veterinarian_id and record.veterinarian_id.status != 'activo':
-                raise ValidationError(
-                    'No se pueden eliminar citas de un veterinario que no este en activo.'
-                )
-        return super().unlink()
+    # def unlink(self):
+    #     for record in self:
+    #         if record.veterinarian_id and record.veterinarian_id.status != 'activo':
+    #             raise ValidationError(
+    #                 'No se pueden eliminar citas de un veterinario que no este en activo.'
+    #             )
+    #     return super().unlink()

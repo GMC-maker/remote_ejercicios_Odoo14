@@ -22,7 +22,8 @@
                     <field name="specialty"/>
                     <field name="photo" widget="image" class="oe_avatar"/>
                     <field name="num_appointments"/>
-                    <field name="status"/>
+                    <field name="status" widget="statusbar" />
+                    <field name="appointment_ids"/>
                 </group>
             </sheet>
         </form>

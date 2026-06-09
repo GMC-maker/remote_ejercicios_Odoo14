@@ -47,4 +47,7 @@ class veterinarian(models.Model):
     def btn_submit_to_vacaciones(self):
           self.write({'status':'vacaciones'})
 
-
+    @api.constrains('appointment_ids')
+    def check_status_appointment(self):
+         if self.status != 'activo':
+              raise models.ValidationError('No se pueden agregar citas si el estado no es activo')

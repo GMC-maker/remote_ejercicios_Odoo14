@@ -4,7 +4,7 @@
     <field name="name">vet_clinic.appointment.form</field>
     <field name="model">vet_clinic.appointment</field>
     <field name="arch" type="xml">
-        <form string="Veterinario">
+        <form string="Citas">
             <sheet>
                 <group>
                     <field name="name"/>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<odoo>
-      <!-- MENÚ RAÍZ (APP) -->
-        <menuitem id="main_auto_repair_menu" name="Auto Repair"  sequence="10"/>
-     <!-- CATEGORÍAS -->
-        <menuitem id="menu_auto_repair_repairs" name="Reparaciones" parent="main_auto_repair_menu" sequence="10"/>
-        <menuitem id="menu_auto_repair_mechanics" name="Mecanicos" parent="main_auto_repair_menu"  sequence="10"/>
-</odoo>

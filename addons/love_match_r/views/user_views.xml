@@ -1,0 +1,96 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<odoo>
+    <data >
+    <record id="user_form_view" model="ir.ui.view">
+        <field name="name">love_match_r.match_user.form</field>
+        <field name="model">love_match_r.match_user</field>
+        <field name="arch" type="xml">
+            <form string="Match User">
+           <!-- aqui el espacio para los botones--> 
+            <header>
+                <button name="btn_submit_to_active" string="Activar Perfil" type="object"/>
+                <button name="btn_submit_to_on_break" string="Tomar un descanso" type="object"/>
+                <button name="btn_submit_to_banned" string="Bloquear Usuario" type="object"/>
+                <button name="btn_delete_pending_appointments" string="Eliminar citas pendientes" type="object"/>
+                <field name="status" widget="statusbar" statusbar_visible="active,on_break,banned"/>
+            </header>
+              <sheet>
+                <group>
+                    <field name="name" />
+                    <field name="email"/>
+                    <field name="age" />
+                    <field name="gender" />
+                    <field name="photo" widget="image" options="{'size': [128, 128]}" />
+                    <field name="biography" />
+                    <field name="status" />
+                    <field name="num_appointments" />
+                    <field name="match_ids" widget="many2one" />
+                    <field name="received_match_ids" widget="many2one" />
+                </group>
+              </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="user_tree_view" model="ir.ui.view">
+        <field name="name">love_match_r.match_user.tree</field>
+        <field name="model">love_match_r.match_user</field>
+        <field name="arch" type="xml">
+        <tree string="tree_string">
+            <field name="name" />
+            <field name="email"/>
+            <field name="age" />
+            <field name="gender" />
+            <field name="photo" widget="image" options="{'size': [128, 128]}" />
+            <field name="biography" />
+            <field name="status" />
+            <field name="num_appointments" />
+            <field name="match_ids" widget="many2one" />
+            <field name="received_match_ids" widget="many2one" />
+        </tree>
+        </field>
+    </record>
+    <!--Vista de GRAPH con barras ejer X Y-->
+    <record id="user_graph_view" model="ir.ui.view">
+    <field name="name">love_match_r.match_user.graph</field>
+    <field name="model">love_match_r.match_user</field>
+    <field name="arch" type="xml">
+        <graph string="Citas por usuario" type="bar">
+            <field name="name" type="row"/> <!--eje X-->
+            <field name="num_appointments" type="measure"/> <!-- eje Y-->
+        </graph>
+    </field>
+</record>
+
+<record id="user_kanban_view" model="ir.ui.view">
+    <field name="name">love_match_r.match_user.kanban</field>
+    <field name="model">love_match_r.match_user</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <field name="name"/>
+            <field name="age"/>
+            <field name="status"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click oe_kanban_card">
+                        <div class="oe_kanban_details">
+                            <strong><field name="name"/></strong>
+                            <div>Edad: <field name="age"/></div>
+                            <div>Estado: <field name="status"/></div>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="love_match_r.action_window_user">
+      <field name="name">Match User</field>
+      <field name="res_model">love_match_r.match_user</field>
+      <field name="view_mode">tree,form,graph,kanban</field>
+    </record>
+
+    </data>
+</odoo>

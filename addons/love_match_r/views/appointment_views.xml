@@ -1,0 +1,71 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<odoo>
+    <data >
+     <record id="appointment_form_view" model="ir.ui.view">
+    <field name="name">love_match_r.match_appointment.form</field>
+    <field name="model">love_match_r.match_appointment</field>
+    <field name="arch" type="xml">
+        <form string="Citas Users">
+         <!-- aqui el espacio para los botones--> 
+
+            <sheet>
+                <group>
+                    <field name="user_from_id" />
+                    <field name="user_to_id"/>
+                    <field name="scheduled_datetime" />
+                    <field name="location" />
+                    <field name="status" />
+                    <field name="notes" />
+                </group>
+            </sheet>
+        </form>
+    </field>
+    </record>
+
+    <record id="appointment_tree_view" model="ir.ui.view">
+        <field name="name">love_match_r.match_appointment.tree</field>
+        <field name="model">love_match_r.match_appointment</field>
+        <field name="arch" type="xml">
+        <tree string="tree_string">
+            <field name="user_from_id" />
+            <field name="user_to_id"/>
+            <field name="scheduled_datetime" />
+            <field name="location" />
+            <field name="status" />
+            <field name="notes" />
+        </tree>
+        </field>
+    </record>
+
+    #vista de calendario 
+
+    <record id="appointment_calendar_view" model="ir.ui.view">
+    <field name="name">love_match_r.match_appointment.calendar</field>
+    <field name="model">love_match_r.match_appointment</field>
+    <field name="arch" type="xml">
+        <calendar string="Citas" color="user_from_id" date_start="scheduled_datetime">
+            <field name="user_from_id" />
+            <field name="user_to_id"/>
+            <field name="location" />
+            <field name="status" />
+            <field name="notes" />
+        </calendar>
+    </field>
+    </record>
+
+
+
+
+    
+
+
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="love_match_r.action_window_appointment">
+      <field name="name">Appointments</field>
+      <field name="res_model">love_match_r.match_appointment</field>
+      <field name="view_mode">calendar,tree,form</field>
+    </record>
+
+    </data>
+</odoo>

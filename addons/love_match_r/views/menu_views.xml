@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+<!-- Top menu item -->
+    <menuitem name="Love MatchR" id="love_match_r.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Match User" id="love_match_r.menu_match_user" parent="love_match_r.menu_root"/>
+    <menuitem name="Match Appointment" id="love_match_r.menu_match_appointment" parent="love_match_r.menu_root"/>
+
+    <!-- actions -->
+    <!-- el id debe ser único, se puede llamar como yo quiera. hace referencia al menu padre..es el segundo nivel. -->
+    <menuitem name="Listado Users" id="love_match_r.menu_list_match_user" parent="love_match_r.menu_match_user"
+              action="love_match_r.action_window_user"/>
+    <menuitem name="Listado de Citas" id="love_match_r.menu_list_match_appointment" parent="love_match_r.menu_match_appointment"
+              action="love_match_r.action_window_appointment"/>
+
+  </data>
+</odoo>

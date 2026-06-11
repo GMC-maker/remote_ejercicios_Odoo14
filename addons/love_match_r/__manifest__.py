@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "auto_repair",
+    'name': "love_matchR",
 
     'summary': """
-        practia de examen ODOO de enero 2026""",
+        REPASO de EXAMEN ODOO2026""",
 
     'description': """
-        Gestion de Reparaciones en un taller.
+        Practicar la construccion de un modulo de odoo de citas
     """,
 
     'author': "Gabriela Celano",
@@ -15,8 +15,8 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Logistics',
-    'version': '0.2',
+    'category': 'Comercial',
+    'version': '0.1',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
@@ -24,11 +24,14 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/mechanic_views.xml',
-        'views/repair_order_views.xml',
-        'views/menu.xml',
+        'views/appointment_views.xml',
+        'views/user_views.xml',
+        'views/menu_views.xml',
     ],
-    
-    'application': True,
-    'installable': True,
+    # only loaded in demonstration mode
+    'demo': [
+        'demo/demo.xml',
+    ],
+    "installable": True,
+    "application": True,
 }
